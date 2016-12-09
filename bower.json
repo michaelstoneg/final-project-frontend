@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "bootstrap": "v4.0.0-alpha.5"
+  },
+  "resolutions": {
+    "angular": "^1.5.9"
   }
 }
