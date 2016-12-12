@@ -1,0 +1,21 @@
+<section class="row">
+  <form ng-submit="displayEdit.update()">
+    <div class="twelve columns">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="name" ng-model="displayEdit.display.name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Theme</label>
+      <input type="text" name="theme" placeholder="theme" ng-model="displayEdit.display.theme" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Owner</label>
+      <input type="text" name="owner" placeholder="owner" ng-model="displayEdit.display.user.username" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Items</label>
+      <input type="text" name="items" placeholder="items" ng-model="displayEdit.display.items" class="u-full-width">
+    </div>
+    <button>Update</button>
+  </form>
+</section>

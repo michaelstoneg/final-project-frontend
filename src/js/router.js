@@ -34,6 +34,31 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/userEdit.html',
       controller: 'UserEditController as userEdit'
     })
+    .state('displaysIndex', {
+      url: '/displays',
+      templateUrl: '/templates/displaysIndex.html',
+      controller: 'DisplaysIndexController as displaysIndex'
+    })
+    .state('displayShow', {
+      url: '/displays/:id',
+      templateUrl: '/templates/displayShow.html',
+      controller: 'DisplayShowController as displayShow'
+    })
+    .state('displayEdit', {
+      url: '/displays/:id',
+      templateUrl: '/templates/displayEdit.html',
+      controller: 'DisplayEditController as displayEdit'
+    })
+    .state('itemsIndex', {
+      url: '/items',
+      templateUrl: '/templates/itemsIndex.html',
+      controller: 'ItemsIndexController as itemsIndex'
+    })
+    .state('itemShow', {
+      url: '/items/:id',
+      templateUrl: '/templates/itemShow.html',
+      controller: 'ItemShowController as itemShow'
+    })
     ;
 
   $urlRouterProvider.otherwise('/users');

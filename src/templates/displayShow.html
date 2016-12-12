@@ -1,0 +1,10 @@
+<section >
+  <h1>Display</h1>
+<p>Name: {{ displayShow.display.name}}</p>
+<p>Theme: {{ displayShow.display.theme}}</p>
+<p>Owner: {{ displayShow.display.user.username}}</p>
+<ul class="display_case">
+  <li class="display_cell" ng-repeat="item in displayShow.display.items">{{item.name}}</li>
+</ul>
+
+</section>

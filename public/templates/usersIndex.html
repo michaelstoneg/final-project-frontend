@@ -1,9 +1,12 @@
 <section>
-  <h1>Users Show</h1>
+  <h1>Users Index</h1>
   <ul>
     <li ng-repeat="user in usersIndex.all">
       <h2>{{ user.username }}</h2>
       <h4>{{ user.email }}</h4>
+      <p>{{user.displays[0].name}}</p>
+      <p>{{user.displays[1].name}}</p>
+      <p>{{user.items}}</p>
       <h3>{{user}}</h3>
       <a ui-sref="userShow({id: user.id})" ui-sref-active="active">Show</a>
       <a ui-sref="userEdit({id: user.id})" ui-sref-active="active">Edit</a>

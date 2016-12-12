@@ -16,6 +16,8 @@
       <nav>
           <ul>
             <li><a ui-sref="usersIndex" ui-sref-active="active">Users</a></li>
+            <li><a ui-sref="displaysIndex" ui-sref-active="active">Displays</a></li>
+            <li><a ui-sref="itemsIndex" ui-sref-active="active">Items</a></li>
             <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
             <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
             <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
