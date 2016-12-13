@@ -1,7 +1,7 @@
 angular.module('finalProject')
   .controller('ItemsIndexController', ItemsIndexController)
-  .controller('ItemShowController', ItemShowController);
-  // .controller('DisplayEditController', DisplayEditController);
+  .controller('ItemShowController', ItemShowController)
+  .controller('ItemEditController', ItemEditController);
 
 ItemsIndexController.$inject = ['Item'];
 function ItemsIndexController(Item) {
@@ -31,18 +31,18 @@ function ItemShowController(Item, $state, $auth) {
   itemShow.isLoggedIn = $auth.isAuthenticated;
 }
 //
-// DisplayEditController.$inject = ['Display','$state', '$auth'];
-// function DisplayEditController(Display, $state, $auth) {
-//   const displayEdit = this;
-//
-//   displayEdit.user = Display.get($state.params);
-//
-//   function update() {
-//     Display.update({id: displayEdit.user.id}, displayEdit.user, () => {
-//       $state.go('displayShow', $state.params);
-//     });
-//   }
-//
-//   displayEdit.update = update;
-//   displayEdit.isLoggedIn = $auth.isAuthenticated;
-// }
+ItemEditController.$inject = ['Item','$state', '$auth'];
+function ItemEditController(Item, $state, $auth) {
+  const itemEdit = this;
+
+  itemEdit.item = Item.get($state.params);
+
+  function update() {
+    Item.update({id: itemEdit.item.id}, itemEdit.item, () => {
+      $state.go('itemShow', $state.params);
+    });
+  }
+
+  itemEdit.update = update;
+  itemEdit.isLoggedIn = $auth.isAuthenticated;
+}

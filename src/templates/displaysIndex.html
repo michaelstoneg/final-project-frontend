@@ -1,5 +1,6 @@
 <section>
   <h1>Display Index</h1>
+  <a ui-sref="displayNew" ui-sref-active="active">New</a>
   <ul>
     <li ng-repeat="display in displaysIndex.all">
       <h2>Name: {{ display.name }}</h2>
@@ -7,10 +8,14 @@
       <h3>Theme: {{ display.theme }}</h4>
       <p>Archived? {{display.archived}}</p>
       <p>Public? {{display.public}}</p>
-      <p>{{display.items}}</p>
-      <!-- <p>{{display}}</p> -->
-      <a ui-sref="displayShow({id: display.id})" ui-sref-active="active">Show</a>
-      <a ui-sref="displayEdit({id: display.id})" ui-sref-active="active">Edit</a>
+      <ul ng-repeat="item in display.items">
+        <li >{{item.name}}</li>
+      </ul>
+
+      <!-- <div ng-if="displaysIndex.isOwnDisplay(display)"> -->
+        <a ui-sref="displayShow({id: display.id})" ui-sref-active="active">Show</a>
+        <a ui-sref="displayEdit({id: display.id})" ui-sref-active="active">Edit</a>
+      <!-- </div> -->
     </li>
   </ul>
 </section>

@@ -1,0 +1,17 @@
+<section class="row">
+  <form ng-submit="itemEdit.update()">
+    <div class="twelve columns">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="name" ng-model="itemEdit.item.name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Description</label>
+      <input type="text" name="theme" placeholder="theme" ng-model="itemEdit.item.description" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Displays</label>
+      <input type="text" name="items" placeholder="items" ng-model="itemEdit.item.displays" class="u-full-width">
+    </div>
+    <button>Update</button>
+  </form>
+</section>

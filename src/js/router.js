@@ -39,13 +39,18 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/displaysIndex.html',
       controller: 'DisplaysIndexController as displaysIndex'
     })
+    .state('displayNew', {
+      url: '/displays/new',
+      templateUrl: '/templates/displayNew.html',
+      controller: 'DisplayNewController as displayNew'
+    })
     .state('displayShow', {
       url: '/displays/:id',
       templateUrl: '/templates/displayShow.html',
       controller: 'DisplayShowController as displayShow'
     })
     .state('displayEdit', {
-      url: '/displays/:id',
+      url: '/displays/:id/edit',
       templateUrl: '/templates/displayEdit.html',
       controller: 'DisplayEditController as displayEdit'
     })
@@ -59,7 +64,11 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/itemShow.html',
       controller: 'ItemShowController as itemShow'
     })
-    ;
+    .state('itemEdit', {
+      url: '/items/:id/edit',
+      templateUrl: '/templates/itemEdit.html',
+      controller: 'ItemEditController as itemEdit'
+    });
 
   $urlRouterProvider.otherwise('/users');
 }

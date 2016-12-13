@@ -1,7 +1,7 @@
 <section >
   <h1>Item</h1>
-<p>Name: {{ itemShow.item.name}}</p>
-<p>Owner: {{ itemShow.item.user.username}}</p>
-<p ng-repeat="dipslay in itemShow.item.displays">
-  Displays: {{ display.name}}</p>
+    <p>Name: {{ itemShow.item.name}}</p>
+    <p>Owner: {{ itemShow.item.user.username}}</p>
+    <p>Description: {{ itemShow.item.description}}</p>
+    <h4>Displays:</h4><p ng-repeat="display in itemShow.item.displays">{{ display.name}}</p>
 </section>

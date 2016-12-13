@@ -1,0 +1,22 @@
+<section class="row">
+  <form ng-submit="displayNew.create()">
+    <div class="twelve columns">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="name" ng-model="displayNew.display.name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Theme</label>
+      <input type="text" name="theme" placeholder="theme" ng-model="displayNew.display.theme" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Public</label>
+      <input type="radio" name="owner" value="true" ng-model="displayNew.display.public" class="u-full-width">
+      <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Items</label>
+      <input type="text" name="items" placeholder="items" ng-model="displayNew.display.items" class="u-full-width">
+    </div>
+    <button>Update</button>
+  </form>
+</section>
