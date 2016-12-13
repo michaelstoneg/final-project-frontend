@@ -14,9 +14,19 @@
       <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">
     </div>
     <div class="twelve columns">
-      <label>Items</label>
-      <input type="text" name="items" placeholder="items" ng-model="displayNew.display.items" class="u-full-width">
+      <label>Items:</label>
+      <!-- {{ displayEdit.display.name }} -->
+      <ul>
+        <label ng-repeat="item in main.items">
+          {{item.name}} - - {{ item.id }}
+          <input type="checkbox" value="{{ item.id }}" ng-model="displayNew.display.item_ids[item.id]">
+        </li>
+      </ul>
     </div>
-    <button>Update</button>
+    <button>Create</button>
   </form>
+
+{{displayNew.display}}
 </section>
+
+<!-- ng-model="displayNew.display.item_ids[$index] -->

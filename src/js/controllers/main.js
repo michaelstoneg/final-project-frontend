@@ -2,8 +2,8 @@ angular.module('finalProject')
   .controller('MainController', MainController);
 
 
-MainController.$inject = ['$auth', '$state', '$rootScope', 'User'];
-function MainController($auth, $state, $rootScope, User) {
+MainController.$inject = ['$auth', '$state', '$rootScope', 'User', 'Display', 'Item'];
+function MainController($auth, $state, $rootScope, User, Display , Item) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
@@ -21,6 +21,10 @@ function MainController($auth, $state, $rootScope, User) {
   }
 
   main.currentUser = User.get({id: main.currentUserId });
+
+
+  main.items = Item.query();
+  main.displays = Display.query();
 
 
   const protectedStates = ['usersIndex', 'userShow', 'userEdit'];

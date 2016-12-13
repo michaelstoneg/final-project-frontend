@@ -22,17 +22,6 @@ function DisplayShowController(Display, $state, $auth) {
   const displayShow = this;
   displayShow.display = Display.get($state.params);
 
-  function deleteDisplay() {
-    displayShow.user.$remove(() => {
-      $state.go('displaysIndex');
-    });
-  }
-
-  // User.get({ id: $auth.getPayload()._id }, (user) => {
-  //   userShow.user = user;
-  // });
-
-  displayShow.delete = deleteDisplay;
   displayShow.isLoggedIn = $auth.isAuthenticated;
 }
 
@@ -41,11 +30,6 @@ function DisplayEditController(Display, $state, $auth, Item) {
   const displayEdit = this;
 
   displayEdit.display = Display.get($state.params);
-  displayEdit.allItems = Item.query();
-
-  // if(displayEdit.display.user.id !== $auth.getPayload().id) {
-  //   $state.go('displaysIndex');
-  // }
 
   function update() {
     Display.update({id: displayEdit.display.id}, displayEdit.display, () => {
@@ -53,6 +37,13 @@ function DisplayEditController(Display, $state, $auth, Item) {
     });
   }
 
+  function deleteDisplay() {
+    displayEdit.display.$remove(() => {
+      $state.go('displaysIndex');
+    });
+  }
+
+  displayEdit.delete = deleteDisplay;
   displayEdit.update = update;
   displayEdit.isLoggedIn = $auth.isAuthenticated;
 }
@@ -61,8 +52,12 @@ DisplayNewController.$inject = ['Display','$state' ];
 function DisplayNewController(Display, $state) {
 
   const displayNew = this;
+  displayNew.display = {};
 
-  function create () {
+  function create() {
+
+    // let temp = [];
+    // temp.push(key);
     Display.save(displayNew.display, (res) => {
       console.log('response', res);
       $state.go('displaysIndex');

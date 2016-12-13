@@ -12,8 +12,9 @@
         <li >{{item.name}}</li>
       </ul>
 
-      <!-- <div ng-if="displaysIndex.isOwnDisplay(display)"> -->
         <a ui-sref="displayShow({id: display.id})" ui-sref-active="active">Show</a>
+      <!-- <div ng-if="displaysIndex.isOwnDisplay(display)"> -->
+        {{ main.currentUserId }} - {{ display.user.id }}
         <a ui-sref="displayEdit({id: display.id})" ui-sref-active="active">Edit</a>
       <!-- </div> -->
     </li>

@@ -12,7 +12,7 @@
       <label>Items:</label>
       <!-- {{ displayEdit.display.name }} -->
       <ul>
-        <label ng-repeat="item in displayEdit.allItems">
+        <label ng-repeat="item in main.items">
           {{ item.name }}
           <input type="checkbox" ng-true-value="{{ item.id }}" ng-false-value="null" ng-model="displayEdit.display.item_ids[$index]">
         </li>
@@ -20,4 +20,5 @@
     </div>
     <button>Update</button>
   </form>
+  <a ng-click="displayEdit.delete()">Delete</a>
 </section>

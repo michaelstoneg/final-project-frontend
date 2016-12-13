@@ -1,7 +1,8 @@
 angular.module('finalProject')
   .controller('ItemsIndexController', ItemsIndexController)
   .controller('ItemShowController', ItemShowController)
-  .controller('ItemEditController', ItemEditController);
+  .controller('ItemEditController', ItemEditController)
+  .controller('ItemNewController', ItemNewController);
 
 ItemsIndexController.$inject = ['Item'];
 function ItemsIndexController(Item) {
@@ -17,17 +18,7 @@ function ItemShowController(Item, $state, $auth) {
 
   itemShow.item = Item.get($state.params);
 
-  function deleteItem() {
-    itemShow.item.$remove(() => {
-      $state.go('ItemsIndex');
-    });
-  }
 
-  // User.get({ id: $auth.getPayload()._id }, (user) => {
-  //   userShow.user = user;
-  // });
-
-  itemShow.delete = deleteItem;
   itemShow.isLoggedIn = $auth.isAuthenticated;
 }
 //
@@ -42,7 +33,28 @@ function ItemEditController(Item, $state, $auth) {
       $state.go('itemShow', $state.params);
     });
   }
+  function deleteItem() {
+    itemEdit.item.$remove(() => {
+      $state.go('itemsIndex');
+    });
+  }
 
+  itemEdit.delete = deleteItem;
   itemEdit.update = update;
   itemEdit.isLoggedIn = $auth.isAuthenticated;
+}
+
+ItemNewController.$inject = ['Item','$state', 'User'];
+function ItemNewController(Item, $state, User) {
+
+  const itemNew = this;
+
+  function create () {
+    Item.save(itemNew.item, (res) => {
+      console.log('response', res);
+      $state.go('itemsIndex');
+    });
+  }
+
+  itemNew.create = create;
 }

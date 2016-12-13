@@ -9,9 +9,16 @@
       <input type="text" name="theme" placeholder="theme" ng-model="itemEdit.item.description" class="u-full-width">
     </div>
     <div class="twelve columns">
-      <label>Displays</label>
-      <input type="text" name="items" placeholder="items" ng-model="itemEdit.item.displays" class="u-full-width">
+      <label>Displays:</label>
+      <!-- {{ displayEdit.display.name }} -->
+      <ul>
+        <label ng-repeat="display in main.displays">
+          {{ display.name }}
+          <input type="checkbox" ng-true-value="{{ display.id }}" ng-false-value="null" ng-model="itemEdit.item.display_ids[$index]">
+        </li>
+      </ul>
     </div>
     <button>Update</button>
   </form>
+  <a ng-click="itemEdit.delete()">Delete</a>
 </section>

@@ -1,0 +1,17 @@
+<section class="row">
+  <form ng-submit="itemNew.create()">
+    <div class="twelve columns">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="name" ng-model="itemNew.item.name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Description</label>
+      <input type="text" name="theme" placeholder="theme" ng-model="itemNew.item.description" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Displays</label>
+      <input type="text" name="items" placeholder="items" ng-model="itemNew.item.displays" class="u-full-width">
+    </div>
+    <button>Create</button>
+  </form>
+</section>

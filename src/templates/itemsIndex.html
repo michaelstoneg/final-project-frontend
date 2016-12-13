@@ -1,5 +1,6 @@
 <section>
   <h1>Item Index</h1>
+  <a ui-sref="itemNew" ui-sref-active="active">New</a>
   <ul>
     <li ng-repeat="item in itemsIndex.all">
       <h2>Name: {{ item.name }}</h2>
@@ -7,7 +8,9 @@
       <h3>Displays: {{ item.displays[0].name }}</h3>
       <h3>Displays: {{ item.displays[1].name }}</h3>
       <!-- <p>{{display}}</p> -->
+
       <a ui-sref="itemShow({id: item.id})" ui-sref-active="active">Show</a>
+      {{ main.currentUserId }} - {{ item.user.id }}
       <a ui-sref="itemEdit({id: item.id})" ui-sref-active="active">Edit</a>
     </li>
   </ul>
