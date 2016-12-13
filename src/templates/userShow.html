@@ -1,8 +1,16 @@
 <section >
-<p>{{ userShow.user.username}}</p>
-<p>{{ userShow.user.email}}</p>
-<p>{{ userShow.user.id}}</p>
-<p>Displays: {{ userShow.user.displays[0]}}</p>
-<p>{{ userShow.user.about}}</p>
-<p>{{ userShow.user.interests}}</p>
+<h2>Name: {{ userShow.user.username }}</h2>
+<h3>Contact: {{ userShow.user.email }}</h3>
+<h4>Displays:</h4>
+<ul ng-repeat="display in userShow.user.displays">
+  <li>Name: {{display.name}}</li>
+</ul>
+<h4>Items:</h4>
+<ul ng-repeat="item in usersIndex.user.items">
+  <li>Name: {{item.name}}, Description: {{item.description}}</li>
+</ul>
+<h3>About: {{userShow.user.about}}</h3>
+<h3>Image: {{userShow.user.image}}</h3>
+<h3>Interests: {{userShow.user.interests}}</h3>
+<h3>Location: {{userShow.user.location}}</h3>
 </section>
