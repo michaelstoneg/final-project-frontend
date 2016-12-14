@@ -6,9 +6,6 @@
       <p>Image: {{ user.image}}</p>
       <h4>Displays: {{ user.displays.length}}</h4>
       <h4>Items: {{ user.items.length }}</h4>
-      <p>
-        {{user.items}}
-      </p>
       <!-- <h3>{{user}}</h3> -->
       <a ui-sref="userShow({id: user.id})" ui-sref-active="active">Show</a>
       <a ui-sref="userEdit({id: user.id})" ui-sref-active="active">Edit</a>

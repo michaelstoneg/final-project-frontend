@@ -8,6 +8,7 @@ function UsersIndexController(User) {
   const usersIndex = this;
 
   usersIndex.all = User.query();
+  console.log('all uzrz', usersIndex.all);
 
 }
 
@@ -15,8 +16,10 @@ UserShowController.$inject = ['User','$state', '$auth'];
 function UserShowController(User, $state, $auth) {
   const userShow = this;
 
-  userShow.user = User.get($state.params);
-  console.log(userShow.user);
+  User.get({ id: $state.params.id}, user => {
+    userShow.user = user;
+    console.log(userShow.user);
+  });
 
   function deleteUser() {
     userShow.user.$remove(() => {

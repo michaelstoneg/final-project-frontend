@@ -10,23 +10,26 @@
     </div>
     <div class="twelve columns">
       <label>Public</label>
-      <input type="radio" name="owner" value="true" ng-model="displayNew.display.public" class="u-full-width">
-      <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">
+      <input type="radio" name="owner" value="true" ng-model="displayNew.display.public" class="u-full-width">Yes
+      <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">No
+    </div>
+    <div class="twelve columns">
+      <label>Archived</label>
+      <input type="radio" name="owner" value="true" ng-model="displayNew.display.public" class="u-full-width">Yes
+      <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">No
     </div>
     <div class="twelve columns">
       <label>Items:</label>
       <!-- {{ displayEdit.display.name }} -->
       <ul>
         <label ng-repeat="item in main.items">
-          {{item.name}} - - {{ item.id }}
+          {{item.name}}
           <input type="checkbox" value="{{ item.id }}" ng-model="displayNew.display.item_ids[item.id]">
         </li>
       </ul>
     </div>
     <button>Create</button>
   </form>
-
-{{displayNew.display}}
 </section>
 
 <!-- ng-model="displayNew.display.item_ids[$index] -->
