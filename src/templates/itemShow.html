@@ -1,7 +1,23 @@
 <section >
   <h1>Item</h1>
-    <p>Name: {{ itemShow.item.name}}</p>
+    <!-- <p>Name: {{ itemShow.item.name}}</p>
     <p>Owner: {{ itemShow.item.user.username}}</p>
-    <p>Description: {{ itemShow.item.description}}</p>
-    <h4>Displays:</h4><p ng-repeat="display in itemShow.item.displays">{{ display.name}}</p>
+    <p>Description: {{ itemShow.item.description}}</p> -->
+
+
+    <div class="card">
+    <img class="card-img-top" src= {{itemShow.item.image}} alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">Name: {{ itemShow.item.name}}</h4>
+        <p class="card-text">
+          Owner: {{ itemShow.item.user.username}}
+          <br>
+          Description: {{ itemShow.item.description}}
+          <br>
+          Displays:<p ng-repeat="display in itemShow.item.displays">{{ display.name}}</p>
+        </p>
+      </div>
+    </div>
+
+
 </section>

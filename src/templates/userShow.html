@@ -1,5 +1,6 @@
 <section >
 <h2>Name: {{ userShow.user.username }}</h2>
+<h3>Image: <img src= {{userShow.user.image}} alt="" /></h3>
 <h3>Contact: {{ userShow.user.email }}</h3>
 <h4>Displays:</h4>
 <ul ng-repeat="display in userShow.user.displays">
@@ -10,7 +11,6 @@
   <li>Name: {{item.name}}, Description: {{item.description}}</li>
 </ul>
 <h3>About: {{userShow.user.about}}</h3>
-<h3>Image: {{userShow.user.image}}</h3>
 <h3>Interests: {{userShow.user.interests}}</h3>
 <h3>Location: {{userShow.user.location}}</h3>
 </section>

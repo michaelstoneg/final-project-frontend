@@ -1,14 +1,25 @@
 <section>
   <h1>Users Index</h1>
-  <ul>
+  <ul class="index">
     <li ng-repeat="user in usersIndex.all">
-      <h2>Name: {{ user.username}}</h2>
-      <p>Image: {{ user.image}}</p>
+      <!-- <h2>Name: {{ user.username}}</h2>
+      <p>Image: <img src= {{ user.image} alt="" /></p>
       <h4>Displays: {{ user.displays.length}}</h4>
-      <h4>Items: {{ user.items.length }}</h4>
+      <h4>Items: {{ user.items.length }}</h4> -->
       <!-- <h3>{{user}}</h3> -->
-      <a ui-sref="userShow({id: user.id})" ui-sref-active="active">Show</a>
-      <a ng-show="main.currentUserId == user.id" ui-sref="userEdit({id: user.id})" ui-sref-active="active">Edit</a>
+
+
+      <div class="card card-block">
+        <img src= {{ user.image}} alt="" />
+        <h4 class="card-title">Name: {{ user.username }}</h4>
+        <p class="card-text">
+          Displays: {{ user.displays.length}}
+          <br>
+          Items: {{ user.items.length }}
+        </p>
+        <a class="card-link" ui-sref="userShow({id: user.id})" ui-sref-active="active">Show</a>
+        <a class="card-link" ng-show="main.currentUserId == user.id" ui-sref="userEdit({id: user.id})" ui-sref-active="active">Edit</a>
+      </div>
     </li>
   </ul>
 </section>

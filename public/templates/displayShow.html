@@ -8,7 +8,7 @@
   <div class="col-xs-3 letter-box"
        ng-repeat="i in [$index, $index + 1]"
        ng-if="displayShow.display.items[i] != null">
-    <div>Item {{i + 1}} is: <b> {{displayShow.display.items[i].name}}</b></div>
+    <div># {{i + 1}}: <a ui-sref='itemShow({id: displayShow.display.items[i].id})'><b>{{displayShow.display.items[i].name}}</b></a></div>
   </div>
 </div>
 

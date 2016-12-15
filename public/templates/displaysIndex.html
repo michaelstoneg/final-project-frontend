@@ -1,23 +1,34 @@
 <section>
   <h1>Display Index</h1>
-  <a ui-sref="displayNew" ui-sref-active="active">New</a>
+  <a ui-sref="displayNew" ui-sref-active="active">New Display</a>
   <ul>
     <li ng-repeat="display in displaysIndex.all">
-      <h2>Name: {{ display.name }}</h2>
-      <h3>Owner: {{ display.user.username }}</h2>
-      <h3>Theme: {{ display.theme }}</h4>
+      <!-- <h2>Name: {{ display.name }}</h2>
+      <h4>Owner: {{ display.user.username }}</h4>
+      <h4>Theme: {{ display.theme }}</h4>
       <p>Archived? {{display.archived}}</p>
-      <p>Public? {{display.public}}</p>
-      <ul ng-repeat="item in display.items">
+      <p>Public? {{display.public}}</p> -->
+      <!-- <ul ng-repeat="item in display.items">
         <li >{{item.name}}</li>
-      </ul>
+      </ul> -->
 
-        <a ui-sref="displayShow({id: display.id})" ui-sref-active="active">Show</a>
+
+      <div class="card card-block">
+      <h4 class="card-title">Name: {{ display.name }}</h4>
+      <p class="card-text">
+        Owner: {{ display.user.username }}
+        <br>
+        Theme: {{ display.theme }}
+        <br>
+        Archived? {{display.archived}} Public? {{display.public}}
+      </p>
+      <!-- ng-show="display.public == true" -->
+      <a class="card-link"  ui-sref="displayShow({id: display.id})" ui-sref-active="active">Show</a>
       <!-- <div ng-if="displaysIndex.isOwnDisplay(display)"> -->
 
-
-        <a ng-show="main.currentUserId == display.user.id" ui-sref="displayEdit({id: display.id})" ui-sref-active="active">Edit</a>
+      <a class="card-link" ng-show="main.currentUserId == display.user.id" ui-sref="displayEdit({id: display.id})" ui-sref-active="active">Edit</a>
       <!-- </div> -->
+      </div>
     </li>
   </ul>
 </section>
