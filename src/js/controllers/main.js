@@ -3,7 +3,7 @@ angular.module('finalProject')
 
 
 MainController.$inject = ['$auth', '$state', '$rootScope', 'User', 'Display', 'Item'];
-function MainController($auth, $state, $rootScope, User, Display , Item) {
+function MainController($auth, $state, $rootScope, User, Display, Item) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
@@ -18,10 +18,8 @@ function MainController($auth, $state, $rootScope, User, Display , Item) {
 
   if ($auth.getPayload()){
     main.currentUserId = $auth.getPayload().id;
+    main.currentUser = User.get({id: main.currentUserId });
   }
-
-  main.currentUser = User.get({id: main.currentUserId });
-
 
   main.items = Item.query();
   main.displays = Display.query();

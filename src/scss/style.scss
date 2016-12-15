@@ -1,6 +1,13 @@
-
-@import 'vendor';
-
 body {
   // background-color: grey;
+  font-family: 'Cardo', serif;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: 'Cardo', serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }

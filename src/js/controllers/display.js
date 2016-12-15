@@ -8,7 +8,9 @@ DisplaysIndexController.$inject = ['Display', '$auth'];
 function DisplaysIndexController(Display, $auth) {
   const displaysIndex = this;
 
-  displaysIndex.all = Display.query();
+  Display.query().$promise.then((displays) => {
+    displaysIndex.all = displays;
+  });
 
   function isOwnDisplay(display) {
     return display.user.id === $auth.getPayload().id;
