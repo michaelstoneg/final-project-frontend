@@ -10,23 +10,23 @@
     </div>
     <div class="twelve columns">
       <label>Public</label>
-      <input type="radio" name="owner" value="true" ng-model="displayNew.display.public" class="u-full-width">Yes
-      <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">No
+      <input type="radio" name="status" value="true" ng-model="displayNew.display.public" class="u-full-width">Yes
+      <input type="radio" name="status" value="false" ng-model="displayNew.display.public" class="u-full-width">No
     </div>
     <div class="twelve columns">
       <label>Archived</label>
-      <input type="radio" name="owner" value="true" ng-model="displayNew.display.public" class="u-full-width">Yes
-      <input type="radio" name="owner" value="false" ng-model="displayNew.display.public" class="u-full-width">No
+      <input type="radio" name="archived" value="true" ng-model="displayNew.display.archived" class="u-full-width">Yes
+      <input type="radio" name="archived" value="false" ng-model="displayNew.display.archived" class="u-full-width">No
     </div>
-    <!-- <div class="twelve columns">
+    <div class="twelve columns">
       <label>Items:</label>
       <ul>
         <label ng-repeat="item in main.items">
-          {{item.name}}
-          <input type="checkbox" value="{{ item.id }}" ng-model="displayNew.display.item_ids[item.id]">
+          {{ item.name }}
+          <input type="checkbox" ng-true-value="{{ item.id }}" ng-false-value="null" ng-model="displayNew.display.item_ids[$index]">
         </li>
       </ul>
-    </div> -->
+    </div>
     <button>Create</button>
   </form>
 </section>

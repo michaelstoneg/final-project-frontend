@@ -52,12 +52,9 @@ DisplayNewController.$inject = ['Display','$state' ];
 function DisplayNewController(Display, $state) {
 
   const displayNew = this;
-  displayNew.display = {};
+  displayNew.display = { item_ids: [] };
 
   function create() {
-
-    // let temp = [];
-    // temp.push(key);
     Display.save(displayNew.display, (res) => {
       console.log('response', res);
       $state.go('displaysIndex');
