@@ -44,8 +44,8 @@ function ItemEditController(Item, $state, $auth) {
   itemEdit.isLoggedIn = $auth.isAuthenticated;
 }
 
-ItemNewController.$inject = ['Item','$state', 'User'];
-function ItemNewController(Item, $state, User) {
+ItemNewController.$inject = ['Item','$state'];
+function ItemNewController(Item, $state) {
 
   const itemNew = this;
 

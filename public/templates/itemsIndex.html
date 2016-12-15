@@ -10,8 +10,7 @@
       <!-- <p>{{display}}</p> -->
 
       <a ui-sref="itemShow({id: item.id})" ui-sref-active="active">Show</a>
-      {{ main.currentUserId }} - {{ item.user.id }}
-      <a ui-sref="itemEdit({id: item.id})" ui-sref-active="active">Edit</a>
+      <a ng-show="main.currentUserId == item.user.id" ui-sref="itemEdit({id: item.id})" ui-sref-active="active">Edit</a>
     </li>
   </ul>
 </section>

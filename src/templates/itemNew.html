@@ -5,6 +5,10 @@
       <input type="text" name="name" placeholder="name" ng-model="itemNew.item.name" class="u-full-width">
     </div>
     <div class="twelve columns">
+      <label>Image</label>
+      <input type="text" name="name" placeholder="name" ng-model="itemNew.item.name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
       <label>Description</label>
       <input type="text" name="theme" placeholder="theme" ng-model="itemNew.item.description" class="u-full-width">
     </div>
@@ -12,16 +16,15 @@
       <label>Context</label>
       <input type="text" name="context" placeholder="context" ng-model="itemNew.item.link_context" class="u-full-width">
     </div>
-    <div class="twelve columns">
+    <!-- <div class="twelve columns">
       <label>Displays:</label>
-      <!-- {{ displayEdit.display.name }} -->
       <ul>
         <label ng-repeat="display in main.displays">
           {{display.name}}
           <input type="checkbox" value="{{ display.id }}" ng-model="itemNew.item.display_ids[display.id]">
         </li>
       </ul>
-    </div>
+    </div> -->
     <button>Create</button>
   </form>
 </section>

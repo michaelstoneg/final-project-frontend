@@ -8,7 +8,7 @@
       <h4>Items: {{ user.items.length }}</h4>
       <!-- <h3>{{user}}</h3> -->
       <a ui-sref="userShow({id: user.id})" ui-sref-active="active">Show</a>
-      <a ui-sref="userEdit({id: user.id})" ui-sref-active="active">Edit</a>
+      <a ng-show="main.currentUserId == user.id" ui-sref="userEdit({id: user.id})" ui-sref-active="active">Edit</a>
     </li>
   </ul>
 </section>
