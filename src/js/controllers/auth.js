@@ -19,7 +19,7 @@ function RegisterController($auth, $state) {
 }
 
 LoginController.$inject = ['$auth', '$state'];
-function LoginController($auth, $state) { console.log('loading LoginController');
+function LoginController($auth, $state) {
   const login = this;
 
   login.credentials = {};
