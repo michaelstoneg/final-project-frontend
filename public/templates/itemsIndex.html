@@ -12,7 +12,7 @@
         <div class="card card-block" >
           <img class="itemImage" ng-src="{{ item.image }}" alt="" />
           <h4 class="card-title">Name: {{ item.name }}</h4>
-          <p class="card-text">Owner: {{ item.user.username }}</p>
+          <p class="card-text"><a ui-sref="userShow({id: item.user.id})">Owner: {{ item.user.username }}</a></p>
 
           <a class="card-link" ui-sref="itemShow({id: item.id})" ui-sref-active="active">Show</a>
           <a class="card-link" ng-show="main.currentUserId == item.user.id" ui-sref="itemEdit({id: item.id})" ui-sref-active="active">Edit</a>

@@ -6,11 +6,11 @@
 
 <!-- {{itemShow.item.displays[0].id}} -->
     <div class="card">
-    <img class="card-img-top" src= {{itemShow.item.image}} alt="Card image cap">
+    <img class="card-img-top itemImage" src= {{itemShow.item.image}} alt="Card image cap">
       <div class="card-block">
         <h4 class="card-title">Name: {{ itemShow.item.name}}</h4>
         <p class="card-text">
-          Owner: {{ itemShow.item.user.username}}
+          <a ui-sref="userShow({id: itemShow.item.user.id})">Owner: {{ itemShow.item.user.username}}</a>
           <br>
           Description: {{ itemShow.item.description}}
           <br>

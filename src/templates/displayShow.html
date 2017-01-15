@@ -2,7 +2,10 @@
   <h1>Display</h1>
 <p>Name: {{ displayShow.display.name}}</p>
 <p>Theme: {{ displayShow.display.theme}}</p>
+<a ui-sref="userShow({id: displayShow.display.user.id})">
 <p>Owner: {{ displayShow.display.user.username}}</p>
+</a>
+<a ui-sref="displaysIndex">Back</a>
 
 
   <ul>
@@ -12,6 +15,7 @@
         <a ui-sref='itemShow({id: item.id})'>
           <p class="card-title">{{item.name}}</p>
         </a>
+        <a class="card-link" ng-show="main.currentUserId == display.user.id" ui-sref="displayEdit({id: display.id})" ui-sref-active="active">Edit</a>
       </div>
     </li>
   </ul>
