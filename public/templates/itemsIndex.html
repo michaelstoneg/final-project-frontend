@@ -1,6 +1,5 @@
 <section>
   <h1>Item Index</h1>
-  {{itemsIndex.random}}
   <a ui-sref="itemNew" ui-sref-active="active">New</a>
   <ul class="row">
     <li class="col" ng-repeat="item in itemsIndex.all">
@@ -11,6 +10,7 @@
       </ul> -->
 
         <div class="card card-block" >
+          <img class="itemImage" ng-src="{{ item.image }}" alt="" />
           <h4 class="card-title">Name: {{ item.name }}</h4>
           <p class="card-text">Owner: {{ item.user.username }}</p>
 

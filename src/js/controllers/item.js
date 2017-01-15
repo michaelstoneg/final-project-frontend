@@ -4,21 +4,19 @@ angular.module('finalProject')
   .controller('ItemEditController', ItemEditController)
   .controller('ItemNewController', ItemNewController);
 
-ItemsIndexController.$inject = ['Item'];
-function ItemsIndexController(Item) {
+ItemsIndexController.$inject = ['Item', '$state', '$auth'];
+function ItemsIndexController(Item, $state, $auth) {
   const itemsIndex = this;
 
   itemsIndex.all = Item.query();
 
-
+  //random card size//
   let realRandom = undefined;
   let preRandom = Math.floor((Math.random() * 10) + 1);
-
   if (preRandom % 2 === 0) {
-    realRandom = 'col-',preRandom;
+    realRandom = preRandom;
   }
-
-  itemsIndex.random = realRandom;
+  itemsIndex.random = 'col-' + realRandom ;
   console.log(itemsIndex.random);
 
 }
@@ -32,12 +30,16 @@ function ItemShowController(Item, $state, $auth) {
 
   itemShow.isLoggedIn = $auth.isAuthenticated;
 }
-//
+
+
 ItemEditController.$inject = ['Item','$state', '$auth'];
 function ItemEditController(Item, $state, $auth) {
   const itemEdit = this;
 
+  console.log('id source', $state.params);
+
   itemEdit.item = Item.get($state.params);
+  console.log('showing item', itemEdit.item);
 
   function update() {
     Item.update({id: itemEdit.item.id}, itemEdit.item, () => {
@@ -45,6 +47,7 @@ function ItemEditController(Item, $state, $auth) {
     });
   }
   function deleteItem() {
+    console.log('removing', itemEdit.item);
     itemEdit.item.$remove(() => {
       $state.go('itemsIndex');
     });

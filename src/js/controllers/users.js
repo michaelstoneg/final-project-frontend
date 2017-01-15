@@ -9,7 +9,6 @@ function UsersIndexController(User) {
 
   usersIndex.all = User.query();
   console.log('all uzrz', usersIndex.all);
-
 }
 
 UserShowController.$inject = ['User','$state', '$auth'];

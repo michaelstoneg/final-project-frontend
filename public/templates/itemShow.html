@@ -22,8 +22,11 @@
               </a>
             </li>
           </ul>
+          <a class="card-link" ng-show="main.currentUserId == itemShow.item.user.id" ui-sref="itemEdit({id: itemShow.item.id})" ui-sref-active="active">Edit</a>
+          <a ng-click="itemShow.delete(item.id)">Delete</a>
+          <br>
+          <a ui-sref="itemsIndex">Back</a>
       </div>
     </div>
-
 
 </section>
