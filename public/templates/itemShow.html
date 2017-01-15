@@ -4,7 +4,7 @@
     <p>Owner: {{ itemShow.item.user.username}}</p>
     <p>Description: {{ itemShow.item.description}}</p> -->
 
-
+<!-- {{itemShow.item.displays[0].id}} -->
     <div class="card">
     <img class="card-img-top" src= {{itemShow.item.image}} alt="Card image cap">
       <div class="card-block">
@@ -14,8 +14,14 @@
           <br>
           Description: {{ itemShow.item.description}}
           <br>
-          Displays:<p ng-repeat="display in itemShow.item.displays">{{ display.name}}</p>
-        </p>
+          Displays:
+          <ul>
+            <li ng-repeat="display in itemShow.item.displays">
+              <a ui-sref='displayShow({id: display.id})'>
+                <p>{{ display.name}}</p>
+              </a>
+            </li>
+          </ul>
       </div>
     </div>
 

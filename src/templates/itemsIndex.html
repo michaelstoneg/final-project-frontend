@@ -1,22 +1,23 @@
 <section>
   <h1>Item Index</h1>
+  {{itemsIndex.random}}
   <a ui-sref="itemNew" ui-sref-active="active">New</a>
-  <ul>
-    <li ng-repeat="item in itemsIndex.all">
+  <ul class="row">
+    <li class="col" ng-repeat="item in itemsIndex.all">
       <!-- <h2>Name: {{ item.name }}</h2>
       <h3>Owner: {{ item.user.username }}</h2> -->
       <!-- <ul ng-repeat="display in item.displays">
         <li>{{display}}</li>
       </ul> -->
 
+        <div class="card card-block" >
+          <h4 class="card-title">Name: {{ item.name }}</h4>
+          <p class="card-text">Owner: {{ item.user.username }}</p>
 
-      <div class="card card-block">
-        <h4 class="card-title">Name: {{ item.name }}</h4>
-        <p class="card-text">Owner: {{ item.user.username }}</p>
+          <a class="card-link" ui-sref="itemShow({id: item.id})" ui-sref-active="active">Show</a>
+          <a class="card-link" ng-show="main.currentUserId == item.user.id" ui-sref="itemEdit({id: item.id})" ui-sref-active="active">Edit</a>
+        </div>
 
-        <a class="card-link" ui-sref="itemShow({id: item.id})" ui-sref-active="active">Show</a>
-        <a class="card-link" ng-show="main.currentUserId == item.user.id" ui-sref="itemEdit({id: item.id})" ui-sref-active="active">Edit</a>
-      </div>
     </li>
   </ul>
 </section>

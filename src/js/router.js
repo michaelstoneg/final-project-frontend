@@ -73,7 +73,8 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/items/:id/edit',
       templateUrl: '/templates/itemEdit.html',
       controller: 'ItemEditController as itemEdit'
-    });
+    })
+    ;
 
   $urlRouterProvider.otherwise('/users');
 }

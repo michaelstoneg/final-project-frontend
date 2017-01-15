@@ -4,17 +4,16 @@
 <p>Theme: {{ displayShow.display.theme}}</p>
 <p>Owner: {{ displayShow.display.user.username}}</p>
 
-<div class="row" ng-repeat="item in displayShow.display.items track by $index" ng-if="$index % 3 == 0">
-  <div class="col-xs-3 letter-box"
-       ng-repeat="i in [$index, $index + 1, $index + 2]"
-       ng-if="displayShow.display.items[i] != null">
-    <div># {{i + 1}}: <a ui-sref='itemShow({id: displayShow.display.items[i].id})'><b>{{displayShow.display.items[i].name}}</b></a></div>
-  </div>
-</div>
 
-
-<!-- <ul class="display_case">
-  <li class="display_cell" ng-repeat="item in displayShow.display.items">{{item.name}}</li>
-</ul> -->
+  <ul>
+    <li ng-repeat="item in displayShow.display.items">
+      <div class="card card-block">
+        <img class="itemImage card-img-top" ng-src="{{ item.image }}" alt="" />
+        <a ui-sref='itemShow({id: item.id})'>
+          <p class="card-title">{{item.name}}</p>
+        </a>
+      </div>
+    </li>
+  </ul>
 
 </section>

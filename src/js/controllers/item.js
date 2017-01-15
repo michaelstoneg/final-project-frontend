@@ -10,6 +10,17 @@ function ItemsIndexController(Item) {
 
   itemsIndex.all = Item.query();
 
+
+  let realRandom = undefined;
+  let preRandom = Math.floor((Math.random() * 10) + 1);
+
+  if (preRandom % 2 === 0) {
+    realRandom = 'col-',preRandom;
+  }
+
+  itemsIndex.random = realRandom;
+  console.log(itemsIndex.random);
+
 }
 
 ItemShowController.$inject = ['Item','$state', '$auth'];
