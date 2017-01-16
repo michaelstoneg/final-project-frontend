@@ -4,11 +4,15 @@
 <h3>Contact: {{ userShow.user.email }}</h3>
 <h4>Displays:</h4>
 <ul ng-repeat="display in userShow.user.displays">
-  <li>Name: {{display.name}}</li>
+  <a ui-sref="displayShow({id: display.id})">
+    <li>{{display.name}}</li>
+  </a>
 </ul>
 <h4>Items:</h4>
 <ul ng-repeat="item in userShow.user.items">
-  <li>Name: {{item.name}}, Description: {{item.description}}</li>
+  <a ui-sref="itemShow({id: item.id})">
+    <li>{{item.name}}, Description: {{item.description}}</li>
+  </a>
 </ul>
 <h3>About: {{userShow.user.about}}</h3>
 <h3>Interests: {{userShow.user.interests}}</h3>
